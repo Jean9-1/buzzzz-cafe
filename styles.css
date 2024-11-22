@@ -183,7 +183,7 @@ nav button, a {
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-bold);
     background: none;
-    color: var(--color-primary);
+    color: var(--color-text);
     text-decoration: underline;
     border-radius: var(--border-radius-small);
     cursor: pointer;
@@ -300,7 +300,7 @@ a:hover {
     flex-basis: auto;
     display: flex;
     flex-direction: column;
-    color:var(--color-li);
+    color:var(--color-text);
     background-color: var(--color-black-transparent);
     padding: var(--spacing-small);
     align-items: start;
@@ -350,8 +350,7 @@ a:hover {
 .opening-hours {
     margin: var(--spacing-small) ;
     padding: var(--spacing-small);
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
+    color: var(--color-text);
     display: flex;
     position: relative;
     justify-content:start;
