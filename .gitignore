@@ -1,0 +1,14 @@
+# System files
+.DS_Store       # macOS system files
+Thumbs.db       # Windows system files
+Desktop.ini     # Windows desktop configuration file
+
+# Logs
+*.log           # General log files
+
+# VS Code
+.vscode/        # VS Code settings folder
+
+# Temporary files
+*.tmp           # Temporary files
+*.bak           # Backup files
