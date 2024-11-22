@@ -195,7 +195,7 @@
         </div>
    
       <!-- Google Maps Embed Code -->
-      <iframe 
+      <iframe title="Buzzzz Café Location" 
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.584812016372!2d33.22946827609235!3d34.89177077285242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14e0af005d7f1a37%3A0x7e8bc53a196ceb3a!2sBuzzzz%20Caf%C3%A9!5e0!3m2!1sen!2s!4v1732120944726!5m2!1sen!2s" 
       style="border:0;" 
       allowfullscreen="" 
@@ -214,10 +214,49 @@
     <footer id="footer" class="footer">
         <p> &copy; 2024 Buzzzz Café. All rights reserved.</p>
     </footer>
+<!-- Cookie Consent Banner -->
+    <div id="cookieConsentBanner">
+      <p>
+        We use cookies to enhance your experience. By continuing to visit this site, you agree to our use of cookies.
+        <a href="/privacy-policy" style="color: #fff;">Learn more</a>
+      </p>
+      <button id="acceptCookies" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer;">Accept</button>
+    </div>
 
+    <!-- Google Consent Mode Script -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Function to check if user has given consent
+      function checkConsent() {
+        var consentGiven = localStorage.getItem("cookieConsent");
+
+        if (consentGiven === "true") {
+          // User has consented, proceed with Google Analytics tracking
+          gtag('js', new Date());  // Initialize Google Analytics
+          gtag('config', 'G-LNYBLPQ450');  // Standard tracking
+        } else {
+          // Consent not given, proceed with anonymized tracking
+          gtag('js', new Date());  // Initialize Google Analytics
+          gtag('config', 'G-LNYBLPQ450', { 'anonymize_ip': true });  // Anonymized tracking
+        }
+      }
+
+      window.onload = checkConsent;  // Run the consent check when the page loads
+
+      // Handle the cookie consent button click
+      document.getElementById("acceptCookies").onclick = function() {
+        localStorage.setItem("cookieConsent", "true");  // Store consent in localStorage
+        document.getElementById("cookieConsentBanner").style.display = "none";
+        // After consent, enable Google Analytics (if consent given)
+        gtag('config', 'G-LNYBLPQ450');
+      };
+    </script>
     <!-- adding javascript -->
     <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" defer></script>
     <script src="scripts.js" defer></script>
+    
     
 </body>
 </html>
