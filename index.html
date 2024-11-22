@@ -53,16 +53,32 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     
     <title>Buzzzz Café</title>
+        <script id="Cookiebot" 
+        src="https://consent.cookiebot.com/uc.js" 
+        data-cbid="68fc6bae-549e-4a59-a910-cde07d63b590" 
+        type="text/javascript" 
+        async></script>
 
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LNYBLPQ450"></script>
+<!-- Google tag (gtag.js) -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.addEventListener('CookieConsentDeclaration', function() {
+    if (Cookiebot.consents.given && Cookiebot.consents.given.givenConsent) {
+      // Consent has been given, load Google Analytics
+      var script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-LNYBLPQ450';
+      script.async = true;
+      document.head.appendChild(script);
 
-  gtag('config', 'G-LNYBLPQ450');
+      script.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LNYBLPQ450');
+      };
+    }
+  });
 </script>
+
 
     <!-- Adding CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -214,49 +230,7 @@
     <footer id="footer" class="footer">
         <p> &copy; 2024 Buzzzz Café. All rights reserved.</p>
     </footer>
-<!-- Cookie Consent Banner -->
-    <div id="cookieConsentBanner" style="display: none;">
-  <p>
-    We use cookies to enhance your experience. By continuing to visit this site, you agree to our use of cookies.
-    <a href="/privacy-policy" style="color: #fff;">Learn more</a>
-  </p>
-  <button id="acceptCookies" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer;">Accept</button>
-</div>
-
-<!-- Google Consent Mode Script -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  
-  // Function to check if user has given consent
-  function checkConsent() {
-    var consentGiven = localStorage.getItem("cookieConsent");
-
-    if (consentGiven === "true") {
-      // Consent already given, hide the consent banner
-      document.getElementById("cookieConsentBanner").style.display = "none";
-      // Proceed with Google Analytics tracking
-      gtag('js', new Date());
-      gtag('config', 'G-LNYBLPQ450');
-    } else {
-      // Consent not given, show the consent banner
-      document.getElementById("cookieConsentBanner").style.display = "block";
-      // Proceed with anonymized Google Analytics tracking
-      gtag('js', new Date());
-      gtag('config', 'G-LNYBLPQ450', { 'anonymize_ip': true });
-    }
-  }
-
-  window.onload = checkConsent;  // Run the consent check when the page loads
-
-  // Handle the cookie consent button click
-  document.getElementById("acceptCookies").onclick = function() {
-    localStorage.setItem("cookieConsent", "true");  // Store consent in localStorage
-    document.getElementById("cookieConsentBanner").style.display = "none";
-    // After consent, enable Google Analytics
-    gtag('config', 'G-LNYBLPQ450');
-  };
-</script>
+ 
 
     <!-- adding javascript -->
     <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" defer></script>
