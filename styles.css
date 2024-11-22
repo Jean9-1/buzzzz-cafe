@@ -183,7 +183,7 @@ nav button, a {
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-bold);
     background: none;
-    color: var(--color-primary);
+    color: var(--color-text);
     text-decoration: underline;
     border-radius: var(--border-radius-small);
     cursor: pointer;
