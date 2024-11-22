@@ -215,44 +215,49 @@
         <p> &copy; 2024 Buzzzz Café. All rights reserved.</p>
     </footer>
 <!-- Cookie Consent Banner -->
-    <div id="cookieConsentBanner">
-      <p>
-        We use cookies to enhance your experience. By continuing to visit this site, you agree to our use of cookies.
-        <a href="/privacy-policy" style="color: #fff;">Learn more</a>
-      </p>
-      <button id="acceptCookies" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer;">Accept</button>
-    </div>
+    <div id="cookieConsentBanner" style="display: none;">
+  <p>
+    We use cookies to enhance your experience. By continuing to visit this site, you agree to our use of cookies.
+    <a href="/privacy-policy" style="color: #fff;">Learn more</a>
+  </p>
+  <button id="acceptCookies" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer;">Accept</button>
+</div>
 
-    <!-- Google Consent Mode Script -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      
-      // Function to check if user has given consent
-      function checkConsent() {
-        var consentGiven = localStorage.getItem("cookieConsent");
+<!-- Google Consent Mode Script -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Function to check if user has given consent
+  function checkConsent() {
+    var consentGiven = localStorage.getItem("cookieConsent");
 
-        if (consentGiven === "true") {
-          // User has consented, proceed with Google Analytics tracking
-          gtag('js', new Date());  // Initialize Google Analytics
-          gtag('config', 'G-LNYBLPQ450');  // Standard tracking
-        } else {
-          // Consent not given, proceed with anonymized tracking
-          gtag('js', new Date());  // Initialize Google Analytics
-          gtag('config', 'G-LNYBLPQ450', { 'anonymize_ip': true });  // Anonymized tracking
-        }
-      }
+    if (consentGiven === "true") {
+      // Consent already given, hide the consent banner
+      document.getElementById("cookieConsentBanner").style.display = "none";
+      // Proceed with Google Analytics tracking
+      gtag('js', new Date());
+      gtag('config', 'G-LNYBLPQ450');
+    } else {
+      // Consent not given, show the consent banner
+      document.getElementById("cookieConsentBanner").style.display = "block";
+      // Proceed with anonymized Google Analytics tracking
+      gtag('js', new Date());
+      gtag('config', 'G-LNYBLPQ450', { 'anonymize_ip': true });
+    }
+  }
 
-      window.onload = checkConsent;  // Run the consent check when the page loads
+  window.onload = checkConsent;  // Run the consent check when the page loads
 
-      // Handle the cookie consent button click
-      document.getElementById("acceptCookies").onclick = function() {
-        localStorage.setItem("cookieConsent", "true");  // Store consent in localStorage
-        document.getElementById("cookieConsentBanner").style.display = "none";
-        // After consent, enable Google Analytics (if consent given)
-        gtag('config', 'G-LNYBLPQ450');
-      };
-    </script>
+  // Handle the cookie consent button click
+  document.getElementById("acceptCookies").onclick = function() {
+    localStorage.setItem("cookieConsent", "true");  // Store consent in localStorage
+    document.getElementById("cookieConsentBanner").style.display = "none";
+    // After consent, enable Google Analytics
+    gtag('config', 'G-LNYBLPQ450');
+  };
+</script>
+
     <!-- adding javascript -->
     <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" defer></script>
     <script src="scripts.js" defer></script>
