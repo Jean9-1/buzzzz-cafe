@@ -1,14 +1,39 @@
-# System files
-.DS_Store       # macOS system files
-Thumbs.db       # Windows system files
-Desktop.ini     # Windows desktop configuration file
+# Logs and temporary system files
+*.log
+*.tmp
 
-# Logs
-*.log           # General log files
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-# VS Code
-.vscode/        # VS Code settings folder
+# IDE/Editor specific files
+.vscode/
+*.code-workspace
 
-# Temporary files
-*.tmp           # Temporary files
-*.bak           # Backup files
+# Node.js dependencies (if using npm or Node.js tools)
+node_modules/
+
+# Build files and minified files
+dist/
+build/
+
+# Temporary and cache files
+*.cache
+*.bak
+*.swp
+
+# Git-specific
+.git/
+.gitignore
+
+# Ignore macOS system files, in case the project is shared
+.DS_Store
+
+# Backup files
+*.bak
+*.old
+*.orig
+
+# Output from debugging tools
+debug.log
