@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Welcome to Buzzzz Café, the best coffee shop in Vavatsinia, Cyprus. Indulge in our delicious range of coffees, freshly made omelettes, crepes, breakfast options, desserts, and refreshing drinks, all while enjoying breathtaking mountain views and creative workshops. A perfect spot to relax and enjoy great food and drinks with family and friends!">
+        <meta name="keywords" content="Buzzzz Café, coffee, omelettes, crepes, breakfast, desserts, Cyprus, Vavatsinia, village mountain biking, hiking, workshops, coffee shop, mountain views, delicious food, relaxation, family-friendly">
+        
+        <meta name="author" content="Buzzzz Café Team">
+  
+         <!-- Add CSP meta tag here -->
+         <meta http-equiv="Content-Security-Policy" content="
+         default-src 'self'; 
+         font-src 'self' https://cdnjs.cloudflare.com;
+         script-src 'unsafe-inline' 'self' https://www.google.com https://use.fontawesome.com; 
+         style-src 'self' 'unsafe-inline' https://use.fontawesome.com https://cdnjs.cloudflare.com;
+         img-src 'self' https://www.buzzzzcafe.com https://www.google.com; 
+         frame-src 'self' https://www.google.com; 
+         connect-src 'self' https://apis.google.com; 
+         object-src 'none'; 
+         base-uri 'self';
+     ">
+
+        <!-- Mobile Web App Meta (Deprecated tag update) -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" sizes="57x57" href="https://www.buzzzzcafe.com/apple-touch-icon-57x57.png">
+
+        <!-- Open Graph tags -->
+        <meta property="og:title" content="Buzzzz Café">
+        <meta property="og:description" content="Welcome to Buzzzz Café, the best coffee shop in Vavatsinia, Cyprus. Enjoy our range of coffees, desserts, and drinks, with breathtaking mountain views and creative workshops!">
+        <meta property="og:url" content="https://www.buzzzzcafe.com"> <!-- Replace with your site URL -->
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Buzzzz Café">
+        <meta property="og:locale" content="en_CY">
+        <meta property="og:image" content="https://www.buzzzzcafe.com/images/your-image.jpg"> <!-- Replace with an actual image -->
+        <meta property="og:image:alt" content="Image of Buzzzz Café with mountain views"> <!-- Add description for better SEO -->
+       
+       
+       
+   
+
+        <!-- Apple Touch Icon (for iOS devices) -->
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+        <!-- Safari Pinned Tab Icon (for macOS) -->
+        <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+
+        <!-- Apple Web App Specific Meta Tags -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="Buzzzz Café">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+ 
+        <title>Buzzzz Café</title>
+
+        <!-- Adding CSS -->
+            
+        <link rel="stylesheet" href="styles.css?v=1.0">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <!-- Delete if it doesn't work -->
+   
+        
+     
+    </head>
+
+
+<body>
+
+    <!-- Icon, welcome header, nav bar -->
+    <header>
+        <div class="header-logo">
+            <h1>Welcome to Buzzzz Café</h1>
+            <img src="images/background.png" class="logo-icon" alt="Buzzbee Coffee Shop Logo"  loading="lazy">
+        </div>
+        <nav aria-label="Main Navigation">
+                <ul>
+                    <li><button id="home-button" aria-label="Go to Home" onclick="showHome()">Home</button></li>
+                    <li><button id="menu-button" onclick="toggleMenu()">Menu</button></li>
+
+                </ul>
+        </nav>
+      <!-- Div for the menu -->
+<div id="menu" class="hidden">
+    <h2>Menu</h2>
+    <div id="menu-images-container">
+        <a href="./Menu%20images/Menu1.png" target="_blank">
+            <img src="./Menu%20images/Menu1.png" alt="Buzzzz Café Menu 1">
+        </a>
+        <a href="./Menu%20images/Menu2.png" target="_blank">
+            <img src="./Menu%20images/Menu2.png" alt="Buzzzz Café Menu 2">
+        </a>
+    </div>
+</div>
+
+    </header>
+
+    <!-- Div for Home and About us-->
+    <main>
+        <div id="home" class="about">
+            <h2>About Us</h2>
+        </div>
+            <div id="about-box2" class="about-box">
+                <p>Buzzzz Café was created to draw more visitors to our picturesque village of Vavatsinia, 
+                    a haven for outdoor enthusiasts. Nestled at the village entrance, our café is the perfect stop for hikers 
+                    and mountain bikers looking to explore the stunning trails and rich history of the area. While the village 
+                    is home to several traditional tavernas, we saw an opportunity to offer something different.
+                    With a spacious terrace that boasts breathtaking mountain views, Buzzzz Café serves up a delicious 
+                    selection of breakfast options, sweet and savoury crepes, pancakes and waffles. Whether you're in the mood 
+                    for a satisfying meal or just want to relax with a coffee or cold drink, we've got you covered.
+                    Our family-friendly café also offers creative workshops, including cheese making, 
+                    candle making, seasonal decoration crafting, T-shirt painting, and much more. 
+                    At Buzzzz Café, there's always something to enjoy—whether you're here for the food, 
+                    the views, or a fun hands-on experience!</p>
+                </div>
+        
+  <!-- Home Image Container Section -->
+<div id="flex-container2" class="flex-container">
+    <a href="pictures/1.jpg" target="_blank">
+        <img src="pictures/1.jpg" alt="A welcoming sign of Buzzzz Café in a beautiful mountain setting">
+    </a>
+    <a href="pictures/2.jpg" target="_blank">
+        <img src="pictures/2.jpg" alt="Beautiful mountain setting in the village">
+    </a>
+    <a href="pictures/3.jpg" target="_blank">
+        <img src="pictures/3.jpg" alt="Buzzzz Cafe sign">
+    </a>
+    <a href="pictures/4.jpg" target="_blank">
+        <img src="pictures/4.jpg" alt="Buzzzz Cafe venue">
+    </a>
+</div>
+
+<!--Div for contact us, opening-hours, social media, trip advisor, i-frame -->
+<div id="social-container" class="container">
+       
+    <div id="contact" class="contact-us">
+           <!-- Div for opening hours -->
+       <div id="hours" class="opening-hours">
+        
+        <ul>
+            <li><strong>Opening Hours</strong></li>
+            <li>Saturday: 07:00-21:00</li>
+            <li>Sunday: 07:00-19:00</li>
+        </ul>
+        
+        
+    </div>
+   
+        <h3>We'd Love to Hear from You!</h3>
+            <h4>Have questions?</h4>
+            <a href="mailto:buzzzzcafe@gmail.com" rel="noopener noreferrer">Contact us by email!</a>
+            <p>
+                <img src="phone-icon/phone-icon.png" alt="Phone number&Icon" class="phone-icon">97814707
+            </p>
+        
+            
+                <div class="social-links">
+                    <div class="instagram-link">
+                        <a href="https://www.instagram.com/buzzzzcafe?igsh=cHNhcnNwdGF2cHIz" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram fa-2x"></i>   
+                        </a>
+                    </div>
+                    
+                    <div class="facebook-link">
+                        <a href="https://www.facebook.com/profile.php?id=61561600662242/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook fa-2x"></i>  
+                        </a>
+                    </div>
+                    
+            
+                    <div class="trip">
+                    <a href="https://www.tripadvisor.com/Restaurant_Review-g2604072-d28332654-Reviews-Buzzzz_Cafe-Larnaka_District.html"
+                     target="_blank" rel="noopener noreferrer">
+                     <i class="fab fa-tripadvisor fa-2x"></i>
+                    </a>
+                  
+                </div>
+             
+                </div>
+            
+        </div>
+   
+      <!-- Google Maps Embed Code -->
+      <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.584812016372!2d33.22946827609235!3d34.89177077285242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14e0af005d7f1a37%3A0x7e8bc53a196ceb3a!2sBuzzzz%20Caf%C3%A9!5e0!3m2!1sen!2s!4v1732120944726!5m2!1sen!2s" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade"  
+      aria-label="Buzzzz Café Location" 
+      id="my-iframe">
+  </iframe>
+  
+             
+      
+    </div>
+    </main>
+
+
+    <footer id="footer" class="footer">
+        <p> &copy; 2024 Buzzzz Café. All rights reserved.</p>
+    </footer>
+
+    <!-- adding javascript -->
+   
+    
+    <script src="scripts.js?v=1.0" defer></script>
+    <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" defer></script>
+</body>
+</html>
