@@ -59,12 +59,41 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     
     <title>Buzzzz Café</title>
-    <link rel="canonical" href="https://www.buzzzzcafe.com/" />
-     
+
+     <!-- Local Business JSON-LD structured data -->
+     <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Buzzzz Café",
+          "image": "https://www.buzzzzcafe.com/images/background.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Vavatsinia, Larnaca Macharas Street",
+            "addressLocality": "Larnaca",
+            "addressRegion": "Cyprus",
+            "postalCode": "7712",
+            "addressCountry": "CY"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "34.8910913",
+            "longitude": "33.2293021"
+          },
+          "url": "https://www.buzzzzcafe.com",
+          "telephone": "+35797814707",
+          "priceRange": "€€",
+          "sameAs": [
+            "https://www.instagram.com/buzzzzcafe?igsh=cHNhcnNwdGF2cHIz",
+            "https://www.facebook.com/profile.php?id=61561600662242"
+          ]
+        }
+      </script>
+
     <!-- Adding CSS -->
     <link rel="stylesheet" href="styles.css">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" type="text/css" crossorigin="anonymous">
-
+    <link rel="canonical" href="https://www.buzzzzcafe.com/" />
 
 </head>
 
