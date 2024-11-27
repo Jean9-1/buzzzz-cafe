@@ -11,8 +11,8 @@
     /* Color Variables */
     --color-background: #000000; /* Black */
     --color-text: #ffd700; /* Gold */
-    --color-light-green: hsl(128, 91%, 50%);
-    --color-light-green-hover: hsl(60, 100%, 55%); /* Lighter yellow */
+    --color-light-green: hsl(128, 100%, 51%);
+    --color-light-green-hover: hsla(60, 100%, 37%, 0.542); /* Lighter yellow */
     --color-black-transparent: rgba(0, 0, 0, 0.7);
     --color-black-overlay: rgba(0, 0, 0, 0.4);
     --color-box-shadow: rgba(0, 0, 0, 0.2);
@@ -131,17 +131,20 @@ h1 {
 }
 
 h2 {
+    border:var(--color-box-shadow);
+    --color-black-overlay: rgba(0, 0, 0, 0.4);
     text-decoration: underline;
-    padding: 10px;
     position: relative;
 }
 
 h3 {
-    font-size: var(--font-size-medium);
+   
+    font-size: var(--font-weight-bold);
 }
 
 p {
     font-size: var(--font-size-medium);
+    word-wrap: break-word;
 }
 
 
@@ -265,7 +268,7 @@ a:hover {
 }
 
 .flex-container img {
-    gap:2rem;
+    gap: 1rem;
         margin: auto;
          justify-content: space-evenly;
         width: 100%;        /* Make images responsive within their parent */
@@ -273,7 +276,9 @@ a:hover {
         min-height: 100px;  /* Set a minimum height */
         height: 250px;       /* Preserve aspect ratio */
         border-radius: 0.5rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         object-fit: cover;  /* Maintain aspect ratio and crop as needed */
+        flex: 1 1;
     }
     
 
@@ -372,8 +377,125 @@ a:hover {
     vertical-align: middle;
 }
 
+ /* Bike section */
+ #bikes {
+    padding: var(--spacing-small);
+  
+    max-width: 1200px;
+    min-height: 90vh;
+    margin: auto;
+}
+
+#bikes h2 {
+    margin: var(--spacing-medium);
+    text-align: justify;
+}
+/* Container for carousel images */
+.bike-container {
+    flex-wrap: nowrap;
+    text-align: start;  
+    align-items: center;                 
+    position: relative;
+    width: 100%;
+    background-color: var(--color-black-transparent);
+    margin: 1em auto;
+    overflow: hidden;
+    
+}
+
+/* Slideshow container */
+.carousel-slide {
+    max-width: 900px;
+    display: flex;
+    background-color: var(--color-black-transparent);
+    margin: auto;
+   
+    position: relative;
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Center the images vertically */
+    height: auto; /* Allow height to adjust dynamically based on content */
+    overflow: hidden; /* Ensure that images do not overflow */
+}
+
+.mySlides img {
+    width: 50%;
+    height: auto;
+     border-style:outset;
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 auto;
+   
+}
+
+/* Hide all slides by default */
+.mySlides {
+    display: none;
+    position: relative;
+}
+
+/* Text styling for overlay */
+.text {
+    color: var(--color-text);
+    font-size: var(--font-size-large);
+    padding: var(--spacing-medium);
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+}
+/* Number text */
+.numbertext {
+    color: var(--color-text);
+    font-size: 16px;
+    padding: 8px 12px;
+    position: relative;
+    margin: auto;
+    height: auto;
+    top: 0;
+
+}
+
+
+.prev, .next {
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--color-light-green);
+    font-size: 18px;
+    user-select: none;
+    border-radius: 0 3px 3px 0;
+}
+
+
+
+
+.next {
+    right: 10px; /* Align to the right */
+    border-radius: 0 3px 3px 0;
+}
+
+.prev {
+    left: 10px; /* Align to the left */
+    border-radius: 0 3px 3px 0;
+}
+ 
+
+.prev:hover, .next:hover {
+    background-color: var(--color-light-green-hover);
+}
  
  
+/* Optional: Fade animation */
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
 
    /* Footer styling */
 .footer {
@@ -387,6 +509,7 @@ a:hover {
      position: relative;
     margin:  auto;  
      width: 30%; 
+    height: auto;
     min-height: auto;
     z-index: var(--z-index-footer);
 }
@@ -468,6 +591,26 @@ a:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .prev, .next {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .text {
+        font-size: 12px;
+    }
+    .numbertext {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 838px){
+    .image-container img {
+        flex: 1 1 100%; /* Stack images vertically */
+        max-width: 100%;
+    }
+}
+ 
 /* For large and extra-large devices (up to 1024px) */
 @media (max-width: 1024px) {
     body, header, nav {
