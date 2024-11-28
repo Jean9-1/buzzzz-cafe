@@ -131,14 +131,12 @@ h1 {
 }
 
 h2 {
-    border:var(--color-box-shadow);
     --color-black-overlay: rgba(0, 0, 0, 0.4);
     text-decoration: underline;
     position: relative;
 }
 
 h3 {
-   
     font-size: var(--font-weight-bold);
 }
 
@@ -268,7 +266,6 @@ a:hover {
 }
 
 .flex-container img {
-    gap: 1rem;
         margin: auto;
          justify-content: space-evenly;
         width: 100%;        /* Make images responsive within their parent */
@@ -356,7 +353,7 @@ a:hover {
     margin: var(--spacing-small) ;
     padding: var(--spacing-small);
     color: var(--color-text);
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-text);
     display: flex;
     position: relative;
     justify-content:start;
