@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Welcome to Buzzzz Café, the best coffee shop in Vavatsinia, Cyprus. Enjoy our range of coffees, desserts, and drinks, with breathtaking mountain views and creative workshops!">
-        <meta name="keywords" content="Buzzzz Café, coffee, desserts, Cyprus, Vavatsinia, mountain biking, hiking, workshops, coffee shop">
+        <meta name="description" content="Welcome to Buzzzz Café, the best coffee shop in Vavatsinia, Cyprus. Enjoy our range of coffees, breakfast, desserts, and drinks, with breathtaking mountain views and creative workshops!">
+        <meta name="keywords" content="Buzzzz Café, coffee, desserts, breakfast, Cyprus, Vavatsinia, mountain biking, hiking, workshops, coffee shop">
         <meta name="author" content="Buzzzz Café Team">
         
 <meta http-equiv="Content-Security-Policy" content="
     default-src 'self'; 
     font-src 'self' https://cdnjs.cloudflare.com https://use.fontawesome.com;
-    script-src 'self' 'unsafe-inline' https://www.google.com https://use.fontawesome.com https://consent.cookiebot.com;
+    script-src 'self' 'unsafe-inline' https://www.google.com https://use.fontawesome.com https;
     style-src 'self' 'unsafe-inline' https://use.fontawesome.com https://cdnjs.cloudflare.com;
     img-src 'self' https://www.buzzzzcafe.com https://www.google.com blob: data:;
     frame-src 'self' https://www.google.com; 
@@ -59,11 +59,41 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     
     <title>Buzzzz Café</title>
-       
-     
+
+     <!-- Local Business JSON-LD structured data -->
+     <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Buzzzz Café",
+          "image": "https://www.buzzzzcafe.com/images/background.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Vavatsinia, Larnaca Macharas Street",
+            "addressLocality": "Larnaca",
+            "addressRegion": "Cyprus",
+            "postalCode": "7712",
+            "addressCountry": "CY"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "34.8910913",
+            "longitude": "33.2293021"
+          },
+          "url": "https://www.buzzzzcafe.com",
+          "telephone": "+35797814707",
+          "priceRange": "€€",
+          "sameAs": [
+            "https://www.instagram.com/buzzzzcafe?igsh=cHNhcnNwdGF2cHIz",
+            "https://www.facebook.com/profile.php?id=61561600662242"
+          ]
+        }
+      </script>
+
     <!-- Adding CSS -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="canonical" href="https://www.buzzzzcafe.com/" />
 
 </head>
 
@@ -81,6 +111,7 @@
                 <li><button id="home-button" aria-label="Go to Home">Home</button></li>
                 <li><button id="menu-button">Menu</button></li>
                 <li><button id="bike-button">Bikes</button></li> 
+                <li><button id="hike-button">Hikes</button></li>
             </ul>
 
         </nav>
@@ -115,7 +146,7 @@
                     for a satisfying meal or just want to relax with a coffee or cold drink, we've got you covered.
                     Our family-friendly café also offers creative workshops, including cheese making, 
                     candle making, seasonal decoration crafting, T-shirt painting, and much more. 
-                    At Buzzzz Café, there's always something to enjoy—whether you're here for the food, 
+                    At Buzzzz Café, there's always something to enjoy, whether you're here for the food, 
                     the views, or a fun hands-on experience!</p>
             </div>
         
@@ -235,40 +266,101 @@
         </div>
        
     <!-- bike carousel  -->
-        <div class="carousel-slide">
-
+     <div id="bike-carousel" class="carousel-slide"> <!--remove it if it doesnt work with using same classes for carousel  -->
+    
             <div class="mySlides">
             <div class="numbertext">1 / 4</div>
-            <img src="Bike/bikes1.jpg" alt="Bike 1">
+            <img src="Bike/bikes1.jpg" alt="Buzzzz rental bikes">
             <div class="text">Buzzzz Bikes  </div>
         </div>
             
         <div class="mySlides">
             <div class="numbertext">2 / 4</div>
-            <img src="Bike/bikes2.jpg" alt="Bike 2">
+            <img src="Bike/bikes2.jpg" alt="Discover the rugged charm of the mountains, 
+            where each bike trail unveils new adventures and peaceful escapes.">
             <div class="text">Explore the untamed beauty of the mountains,
             where every bike trail leads to serenity and adventure.</div>
         </div>
             
         <div class="mySlides">
             <div class="numbertext">3 / 4</div>
-            <img src="Bike/bikes3.jpg" alt="Bike 3">
+            <img src="Bike/bikes3.jpg" alt="Pedal through nature's lush canopy, 
+            as this trail winds its way between majestic trees, 
+            offering the ideal mix of calm and excitement.">
             <div class="text">Ride through nature's green embrace this trail weaves between towering trees, 
              offering the perfect blend of tranquility and adventure.</div>
         </div>
             
         <div class="mySlides">
             <div class="numbertext">4 / 4</div>
-            <img src="Bike/bikes4.jpg" alt="Bike 4">
+            <img src="Bike/bikes4.jpg" alt="Uncover the stunning charm of the mountains, 
+            a vibrant green haven enveloped by endless forests stretching beyond the horizon.">
             <div class="text">Discover the breathtaking beauty of the mountains, 
             a lush green paradise surrounded by trees as far as the eye can see.</div>
         </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <a class="prev" onclick="plusSlides(-1, 'bike-carousel')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'bike-carousel')">&#10095;</a>
                     
         </div>
     </div>
  
+
+<!--Div for hiking-->
+    <div id="hiking" class="hidden">
+        <div class="hiking-container">
+    <h2>Want to step out of your comfort zone?</h2> 
+        <p>Come hiking in and around Vavatsinia! Whether strolling through village's narrow paved lanes 
+            filled with flowers and urns, the lush forest, across majestic mountains to unravel mesmerizing coves and 
+            a plethora of cultural treasures.
+            Whether you're a solo traveller, a group of friends, a family or a couple, 
+            you are sure to find vigorous activities to boost your physical and mental health and make you feel exhilarated, 
+            excited and challenged - all at once!</p><br>
+        <div class="hike-trail"> 
+            <a href="https://vavatsiniavillage.com/athasia-nature-trail-linear" target="_blank">Spilia Tis Athasias</a>
+        </div>
+        <div class="hike-trail">
+            <a href="https://vavatsiniavillage.com/karvounarka-walking-trail" target="_blank">Karvounarka Natural Trail</a>
+        </div>
+            <!-- Hiking  carousel  -->
+        <div id="hiking-carousel" class="carousel-slide">
+            
+        <div class="mySlides">
+            <div class="numbertext">1 / 4</div>
+            <img src="hiking/hiking3.jpg" alt="A mysterious cave along the hiking trail, 
+            surrounded by dense pine trees, inviting explorers to uncover its secrets." loading="lazy">
+            <div class="text">Discover the hidden cave along the trail 'Spilia tis Athasias', nestled within the pine forest, 
+                offering a glimpse into the area's rich history and natural beauty.</div>
+        </div>
+            
+        <div class="mySlides">
+            <div class="numbertext">2 / 4</div>
+            <img src="hiking/hiking4.jpg" alt="A serene seating area with comfortable chairs overlooking a scenic mountain view, 
+            framed by green trees and an expansive horizon, inviting relaxation and tranquility" loading="lazy">
+            <div class="text">A peaceful seating area with a stunning mountain view, 
+                surrounded by lush greenery, offering the perfect spot to relax and enjoy the vast horizon.</div>
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">3 / 4</div>
+            <img src="hiking/hiking5.jpg" alt="A picturesque hiking trail surrounded by vibrant greenery, tall trees, 
+            and distant mountains, creating a tranquil natural journey." loading="lazy">
+            <div class="text">An inviting hiking path winding through lush trees, 
+                leading towards majestic mountains, offering a perfect escape into nature.</div>
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">4 / 4</div>
+            <img src="hiking/hiking6.jpg" alt="A peaceful hiking path bordered by wooden fences, 
+            surrounded by lush trees and offering a stunning view of distant mountains." loading="lazy">
+            <div class="text">Follow the scenic trail lined with rustic wooden fences, 
+                leading through towering trees and opening up to breathtaking mountain views.</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1, 'hiking-carousel')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'hiking-carousel')">&#10095;</a>
+                    
+        </div>
+        </div> 
+        </div>
 </main>
 
 

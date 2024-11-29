@@ -12,6 +12,7 @@ var contactUs = document.getElementById('contact');
 var myIframe = document.getElementById('my-iframe');
 var bikeButton = document.getElementById('bike-button');
 var bikes = document.getElementById('bikes');
+var hiking = document.getElementById('hiking'); // Added hiking section
 
 // DOMContentLoaded event to ensure the DOM is ready
 document.addEventListener('DOMContentLoaded', function () {
@@ -39,6 +40,14 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.warn("Menu button not found!");
     }
+
+    // Add event listener for the hiking button
+    var hikeButton = document.getElementById('hike-button');
+    if (hikeButton) {
+        hikeButton.addEventListener('click', toggleHiking);  
+    } else {
+        console.warn("Hike button not found!");
+    }
 });
 
 // Function to toggle the visibility of the bike section
@@ -61,6 +70,26 @@ function toggleBikes() {
     }
 }
 
+// Function to toggle the visibility of the hiking section
+function toggleHiking() {
+    try {
+        console.log('Toggling hiking visibility...');
+        
+        // Check if the hiking section is currently hidden
+        var hikingVisible = !hiking.classList.contains('hidden');
+
+        // Hide all sections except the hiking section if it was not already visible
+        hideAllSections(hikingVisible ? null : hiking);
+
+        // Toggle the hiking section visibility
+        toggleVisibility(hiking, !hikingVisible);
+        
+        console.log('Hiking section is now ' + (hikingVisible ? 'hidden' : 'shown') + '.');
+    } catch (error) {
+        console.error('Error in toggleHiking:', error);
+    }
+}
+
 // Function to hide all sections except the specified one
 function hideAllSections(except) {
     except = except || null;
@@ -68,7 +97,7 @@ function hideAllSections(except) {
         console.log('Hiding all sections except: ' + (except ? except.id : 'none'));
 
         // Array of all sections to hide
-        var sections = [about, aboutBox, flexContainer, container, openingHours, contactUs, myIframe, menu];
+        var sections = [about, aboutBox, flexContainer, container, openingHours, contactUs, myIframe, menu, bikes, hiking];
         sections.forEach(function (section) {
             if (section !== except) {
                 console.log('Hiding: ' + (section.id || section.className));
@@ -91,7 +120,7 @@ function toggleMenu() {
         menuDiv.classList.toggle('hidden', !menuVisible);
 
         // Hide all sections except the menu
-        var sections = [about, aboutBox, flexContainer, container, openingHours, contactUs, myIframe, bikes];
+        var sections = [about, aboutBox, flexContainer, container, openingHours, contactUs, myIframe, bikes, hiking];
         sections.forEach(function (section) {
             section.classList.add("hidden");
         });
@@ -105,9 +134,10 @@ function showHome() {
     try {
         console.log('Navigating to Home section...');
         
-        // Ensure the menu and bike section are hidden
+        // Ensure the menu, bike, and hiking sections are hidden
         menu.classList.add('hidden');
         bikes.classList.add('hidden');
+        hiking.classList.add('hidden');
 
         // Show the home section and necessary elements
         var sections = [about, aboutBox, flexContainer, container, openingHours, contactUs, myIframe, footer];
@@ -135,36 +165,42 @@ function toggleVisibility(element, isVisible) {
     }
 }
 
-// bike slide for images
+//   slide for images
 
-let slideIndex = 1; // Initialize slide index (start with the first slide)
-showSlides(slideIndex); // Show the first slide by default
+// Initialize slide states for both carousels
+let carouselStates = {
+    "bike-carousel": 1,  // Initial slide index for the bike carousel
+    "hiking-carousel": 1 // Initial slide index for the hiking carousel
+};
 
-// Function to control the slideshow (navigate between slides)
-function showSlides(n) {
-    let slides = document.getElementsByClassName("mySlides");
+// Function to show slides for a specific carousel
+function showSlides(n, carouselId) {
+    const carousel = document.getElementById(carouselId); // Get the carousel container
+    const slides = carousel.getElementsByClassName("mySlides"); // Get all slides in this carousel
 
-    // If n is greater than the number of slides, loop back to the first slide
+    // Wrap around if the slide index is out of bounds
     if (n > slides.length) {
-        slideIndex = 1; // Wrap to the first slide
+        carouselStates[carouselId] = 1; // Wrap to the first slide
     }
-
-    // If n is less than 1, loop back to the last slide
     if (n < 1) {
-        slideIndex = slides.length; // Wrap to the last slide
+        carouselStates[carouselId] = slides.length; // Wrap to the last slide
     }
 
-    // Hide all slides by default
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; // Hide each slide
+    // Hide all slides in the carousel
+    for (let slide of slides) {
+        slide.style.display = "none";
     }
 
     // Show the current slide
-    slides[slideIndex - 1].style.display = "block"; // Display the current slide
+    slides[carouselStates[carouselId] - 1].style.display = "block";
 }
 
-// Function to change the slide (next or previous)
-function plusSlides(n) {
-    slideIndex += n; // Increment or decrement the slideIndex
-    showSlides(slideIndex); // Update the slide display based on the new index
+// Function to navigate slides (next or previous) for a specific carousel
+function plusSlides(n, carouselId) {
+    carouselStates[carouselId] += n; // Adjust the current slide index
+    showSlides(carouselStates[carouselId], carouselId); // Update the slides display
 }
+
+// Initialize both carousels on page load
+showSlides(1, "bike-carousel");
+showSlides(1, "hiking-carousel");
