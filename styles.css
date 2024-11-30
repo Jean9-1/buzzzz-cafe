@@ -395,7 +395,7 @@ a:hover {
     flex-direction:row;
     justify-content: center;
     min-height: 50px;
-    width:300px;
+    width:350px;
     border: 2px solid var(--color-text);
     
 }
@@ -472,10 +472,11 @@ a:hover {
     z-index: 10;
     position: absolute;
     top: 50%;
+    opacity:0.8;
     transform: translateY(-50%);
     padding: 16px;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: hsl(30, 50%, 25%);
     color: var(--color-light-green);
     font-size: 18px;
     user-select: none;
