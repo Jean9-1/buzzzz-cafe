@@ -13,13 +13,19 @@
 
   <!-- Menu Page -->
   <url>
-    <loc>https://www.buzzzzcafe.com/menu</loc> <!-- Update with the correct URL if needed -->
+    <loc>https://www.buzzzzcafe.com/menu</loc>
     <lastmod>2024-11-27T13:56:11+00:00</lastmod>
   </url>
 
   <!-- Bike Section -->
   <url>
-    <loc>https://www.buzzzzcafe.com/bike</loc> <!-- Update with the correct URL if needed -->
+    <loc>https://www.buzzzzcafe.com/bike</loc>
+    <lastmod>2024-11-27T13:56:11+00:00</lastmod>
+  </url>
+
+  <!-- Hike Section -->
+  <url>
+    <loc>https://www.buzzzzcafe.com/hike</loc> <!-- Update with the correct URL if needed -->
     <lastmod>2024-11-27T13:56:11+00:00</lastmod>
   </url>
 
