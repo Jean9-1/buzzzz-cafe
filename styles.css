@@ -22,7 +22,7 @@
     --font-size-medium: 1rem; /* 16px */
     --font-size-large: 1.125rem; /* 18px */
     --font-weight-bold: 700;
-    --font-family-base: 'Arial', sans-serif;
+    --font-family-base: 'Roboto', sans-serif;
 
     /* Spacing */
     --spacing-small: 0.525rem; /* 10px */
@@ -89,6 +89,7 @@ body {
             cursor: url('images/cursor.png'), auto;  /*Custom cursor when hovering */
             background-image: url('background/wp8210019.webp'); /* Replace with your image path */
             background-size: cover;
+            opacity: 0.8;
             background-repeat: no-repeat;
             background-position: center center;
             width: 100vw;                       /* Allows the body to adjust to screen width */
@@ -119,14 +120,14 @@ header {
 
 /* Common styles for headings and paragraphs */
 h1, h2, h3, p {
-    
-    line-height: 1.2;
+    margin-bottom: 10px;
+    line-height: 1.4;
 }
 
 h1 {
     text-align: center;
     font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
-    font-family: 'Arial Black', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: var(--color-text);
 }
 
