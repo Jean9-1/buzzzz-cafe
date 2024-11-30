@@ -278,9 +278,6 @@ a:hover {
         flex: 1 1;
     }
     
-
-
-
  
 /* container styling */
 .container {
@@ -402,6 +399,8 @@ a:hover {
 
 /* Container for carousel images */
 .bike-container, .hiking-container {
+    padding: auto;
+    height: auto;
     flex-wrap: nowrap;
     text-align: start;  
     align-items: center;                 
