@@ -400,7 +400,6 @@ a:hover {
 
 /* Container for carousel images */
 .bike-container, .hiking-container {
-    padding: auto;
     height: auto;
     flex-wrap: nowrap;
     text-align: start;  
@@ -604,6 +603,9 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+
+    /* For large screens (default layout) */
+
     .prev, .next {
         font-size: 14px;
         padding: 10px;
