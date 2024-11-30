@@ -588,24 +588,19 @@ a:hover {
         text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.5);
     }
 
-    /* Adjust flex-container image sizes */
     .flex-container img {
-        margin: var(--spacing-small);
+        
         min-width: 20%; /* Ensure the images are not too large */
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         flex-direction: column;
-        gap: 2em;
     }
-
     #menu {
         padding: var(--spacing-medium); /* Adjust padding for menu */
     }
 }
 
 @media (max-width: 768px) {
-
-    /* For large screens (default layout) */
-
+ 
     .prev, .next {
         font-size: 14px;
         padding: 10px;
@@ -618,12 +613,7 @@ a:hover {
     }
 }
 
-@media (max-width: 838px){
-    .image-container img {
-        flex: 1 1 100%; /* Stack images vertically */
-        max-width: 100%;
-    }
-}
+
  
 /* For large and extra-large devices (up to 1024px) */
 @media (max-width: 1024px) {
@@ -658,6 +648,7 @@ a:hover {
         padding: 0 10px;
     }
 }
+
 
 /* For screens 1200px to 839px */
 @media (max-width: 1200px) and (min-width: 840px) {
